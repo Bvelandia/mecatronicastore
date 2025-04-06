@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MecatronicaStore - Tienda de Electrónica</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header y navegación -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="img/logo.png" alt="MecatronicaStore Logo">
+                <h1>MecatronicaStore</h1>
+            </div>
+            <button class="mobile-toggle">☰</button>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="productos.html">Productos</a>
+                <a href="educacion.html">Educación</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <div class="cart-icon">
+                <span>🛒</span>
+                <span class="badge">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Carrito flotante -->
+    <div class="cart-overlay"></div>
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button class="close-cart">×</button>
+        </div>
+        <div class="cart-items">
+            <!-- Los items se generarán dinámicamente -->
+            <div class="cart-item">
+                <div class="cart-item-image">
+                    <img src="productos/arduino-uno.jpg" alt="Producto">
+                </div>
+                <div class="cart-item-info">
+                    <div class="cart-item-title">Arduino UNO R3</div>
+                    <div class="cart-item-price">$25.00</div>
+                    <div class="cart-item-quantity">
+                        <button class="quantity-btn">-</button>
+                        <input type="text" class="quantity-input" value="1" readonly>
+                        <button class="quantity-btn">+</button>
+                        <button class="remove-item">🗑️</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="cart-item-image">
+                    <img src="productos/sensor-ultrasonico.jpg" alt="Producto">
+                </div>
+                <div class="cart-item-info">
+                    <div class="cart-item-title">Sensor Ultrasónico HC-SR04</div>
+                    <div class="cart-item-price">$5.99</div>
+                    <div class="cart-item-quantity">
+                        <button class="quantity-btn">-</button>
+                        <input type="text" class="quantity-input" value="2" readonly>
+                        <button class="quantity-btn">+</button>
+                        <button class="remove-item">🗑️</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-total">
+            <span>Total:</span>
+            <span>$36.98</span>
+        </div>
+        <a href="#" class="checkout-btn" id="whatsapp-checkout">Enviar Pedido por WhatsApp</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Tu Tienda de Componentes Electrónicos</h2>
+            <p>Encuentra todo lo que necesitas para tus proyectos de mecatrónica, robótica y electrónica en un solo lugar.</p>
+            <a href="productos.html" class="hero-btn">Ver Productos</a>
+        </div>
+    </section>
+
+    <!-- Productos Destacados -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Productos Destacados</h2>
+                <p>Componentes de alta calidad para tus proyectos</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="productos/arduino-uno.jpg" alt="Arduino UNO">
+                    </div>
+                    <div class="product-info">
+                        <h3>Arduino UNO R3</h3>
+                        <p>Placa de desarrollo basada en ATmega328P</p>
+                        <div class="price">$25.00</div>
+                        <button class="add-to-cart" data-id="1" data-name="Arduino UNO R3" data-price="25.00">Añadir al Carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="productos/raspberry-pi.jpg" alt="Raspberry Pi">
+                    </div>
+                    <div class="product-info">
+                        <h3>Raspberry Pi 4 (4GB)</h3>
+                        <p>Ordenador de placa única de alto rendimiento</p>
+                        <div class="price">$65.00</div>
+                        <button class="add-to-cart" data-id="2" data-name="Raspberry Pi 4 (4GB)" data-price="65.00">Añadir al Carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="productos/sensor-ultrasonico.jpg" alt="Sensor Ultrasónico">
+                    </div>
+                    <div class="product-info">
+                        <h3>Sensor Ultrasónico HC-SR04</h3>
+                        <p>Sensor de distancia por ultrasonido</p>
+                        <div class="price">$5.99</div>
+                        <button class="add-to-cart" data-id="3" data-name="Sensor Ultrasónico HC-SR04" data-price="5.99">Añadir al Carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="productos/kit-motores.jpg" alt="Kit de Motores">
+                    </div>
+                    <div class="product-info">
+                        <h3>Kit de Motores para Robótica</h3>
+                        <p>Incluye motores DC, servo y driver L298N</p>
+                        <div class="price">$29.99</div>
+                        <button class="add-to-cart" data-id="4" data-name="Kit de Motores para Robótica" data-price="29.99">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Educativa -->
+    <section class="education-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Centro Educativo</h2>
+                <p>Aprende y comparte conocimientos sobre electrónica y mecatrónica</p>
+            </div>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="education-image">
+                        <span>📘</span>
+                    </div>
+                    <div class="education-info">
+                        <h3>Introducción a Arduino</h3>
+                        <p>Aprende los conceptos básicos para comenzar con Arduino desde cero.</p>
+                        <a href="educacion/intro-arduino.html" class="read-more">Leer más →</a>
+                    </div>
+                </div>
+                <div class="education-card">
+                    <div class="education-image">
+                        <span>📊</span>
+                    </div>
+                    <div class="education-info">
+                        <h3>Sensores y Actuadores</h3>
+                        <p>Guía completa sobre los diferentes tipos de sensores y actuadores.</p>
+                        <a href="educacion/sensores-actuadores.html" class="read-more">Leer más →</a>
+                    </div>
+                </div>
+                <div class="education-card">
+                    <div class="education-image">
+                        <span>🤖</span>
+                    </div>
+                    <div class="education-info">
+                        <h3>Proyecto: Robot Seguidor de Línea</h3>
+                        <p>Tutorial paso a paso para construir tu propio robot seguidor de línea.</p>
+                        <a href="educacion/robot-seguidor.html" class="read-more">Leer más →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contacto y Soporte</h2>
+                <p>Estamos aquí para ayudarte con tus proyectos</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>¿Tienes alguna pregunta?</h3>
+                    <p>Nuestro equipo de expertos está disponible para ayudarte a encontrar los componentes adecuados para tus proyectos.</p>
+                    <p><strong>Email:</strong> info@mecatronicastore.com</p>
+                    <p><strong>Teléfono:</strong> +123 456 7890</p>
+                    <p><strong>Horario:</strong> Lun-Vie: 9am - 6pm</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">📱</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">📹</a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>MecatronicaStore</h3>
+                    <p>Tu tienda especializada en componentes electrónicos y mecatrónicos para proyectos de todos los niveles.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="educacion.html">Centro Educativo</a></li>
+                        <li><a href="about.html">Sobre Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categorías</h3>
+                    <ul class="footer-links">
+                        <li><a href="productos.html?cat=arduino">Arduino</a></li>
+                        <li><a href="productos.html?cat=raspberry">Raspberry Pi</a></li>
+                        <li><a href="productos.html?cat=sensores">Sensores</a></li>
+                        <li><a href="productos.html?cat=motores">Motores</a></li>
+                        <li><a href="productos.html?cat=kits">Kits de Robótica</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Suscríbete para recibir noticias sobre nuevos productos y tutoriales.</p>
+                    <form id="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Tu email" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MecatronicaStore. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
